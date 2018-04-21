@@ -7,6 +7,7 @@ const path = require('path')
 app.use(morgan('combined'))
 app.use(bodyParser.json())
 app.use(cors())
+
 // Routes
 require('./routes')(app);
 

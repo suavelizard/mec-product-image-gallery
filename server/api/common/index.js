@@ -7,9 +7,9 @@ function handleError(res, statusCode) {
 }
 function respondWithResult(res, statusCode) {
     statusCode = statusCode || 200;
-    return entity => {
-        if (entity) {
-            return res.status(statusCode).json(entity);
+    return obj => {
+        if (obj) {
+            return res.status(statusCode).json(obj);
         }
         return null;
     };
