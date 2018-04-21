@@ -1,0 +1,21 @@
+{
+  "name": "mec-search-api",
+  "version": "1.0.0",
+  "description": "A REST API that extends the MEC API to retrieve product images and associated primary colors from the images.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "./node_modules/.bin/jasmine-node spec"
+  },
+  "author": "Zane Ouimet",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "jasmine-node": "^1.14.5",
+    "morgan": "^1.9.0",
+    "serve-static": "^1.13.2"
+  }
+}
