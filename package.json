@@ -7,7 +7,7 @@
   "preinstall": "npm prune",
   "start": "node ./server/index.js",
   "postinstall": "npm install --prefix server && npm install --prefix client",
-  "heroku-postbuild": "cd client && npm install --only=dev && npm run build"
+  "heroku-postbuild": "cd client && npm run build"
  },
  "author": "Zane Ouimet",
  "license": "MIT",
