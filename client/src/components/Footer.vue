@@ -3,7 +3,7 @@
       <div class="container">
         <div class="row">
             <div class="col text-center">
-                <p>MEC Product Image Gallery proof of concept by <a href="http://zaneouimet.com">Zane Ouimet</a> Source: <a href="https://github.com/suavelizard/tfsa-vs-rrsp-calculator">Github</a></p>
+                <p>MEC Product Image Gallery proof of concept by <a href="http://zaneouimet.com">Zane Ouimet</a> Source: <a href="https://github.com/suavelizard/mec-product-image-gallery">Github</a></p>
             </div>
         </div>
       </div>
