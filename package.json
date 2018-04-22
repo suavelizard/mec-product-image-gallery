@@ -5,8 +5,9 @@
  "main": "index.js",
  "scripts": {
   "preinstall": "npm prune",
-  "start": "node --prefix server index.js",
-  "postinstall": "npm install --prefix client && npm build --prefix client && npm install --prefix server"
+  "start": "node ./server/index.js",
+  "postinstall": "npm install --prefix server && npm install --prefix client",
+  "heroku-postbuild": "cd client && npm install --only=dev && npm run build"
  },
  "author": "Zane Ouimet",
  "license": "MIT"
