@@ -10,5 +10,9 @@
   "heroku-postbuild": "cd client && npm install --only=dev && npm run build"
  },
  "author": "Zane Ouimet",
- "license": "MIT"
+ "license": "MIT",
+ "engines": {
+    "node": ">= 6.0.0",
+    "npm": ">= 3.0.0"
+  }
 }
