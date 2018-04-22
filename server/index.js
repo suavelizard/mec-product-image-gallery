@@ -4,6 +4,8 @@ const cors = require('cors')
 const morgan = require('morgan')
 const app = express()
 const path = require('path')
+const env = require('dotenv').config()
+
 app.use(morgan('combined'))
 app.use(bodyParser.json())
 app.use(cors())

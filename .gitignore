@@ -1,5 +1,6 @@
-#Root
+#All
 .DS_Store
+.env
 
 #Client
 client/node_modules/
