@@ -10,12 +10,12 @@ const OPTIONS = {
     json: true
 }
 
-function search (query) {
+function search (keywords) {
     return rp.get(_.extend({
         method: 'GET',
         uri: `${BASE_URL}/products/search`,
         qs: {
-            keywords: query
+            keywords: keywords
         },
     }, OPTIONS))
 }

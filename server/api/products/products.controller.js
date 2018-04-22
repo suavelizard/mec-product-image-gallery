@@ -10,24 +10,35 @@ const mecImgixApi = require('../../wrappers/mec-imgix-api')
  * Get products
  */
 function index(req, res) {
-    return mecApi.products.search(req.keywords)
+    return mecApi.products.search(req.query.keywords)
         .then(response => {
-            return Promise.map(_.get(response, 'products'), p => {
-                const parts = _.get(p, 'default_image_urls.main_image_url').split('/')
-                const imagePath = _.join([parts[parts.length - 2], parts[parts.length - 1]], '/')
-                return mecImgixApi.getColors(imagePath)
-                .then(colors => {
-                    p.colors = colors
-                    return p
-                })
+            return getColorData(_.slice(_.get(response, 'products'), 0, 5))
+            .then(productsWithColorData => {
+                response.products = productsWithColorData
+                return response
             })
         })
-        .then(productsWithColors => {
-           return common.respondWithResult(productsWithColors)
-        })
-        .catch(common.handleError(res));
+        .then(common.respondWithResult(res))
+        .catch(common.handleError(res))
 }
 
+/**
+ * returns color data for products based on the main_image_url
+ * @param {array} products 
+ * @returns 
+ */
+function getColorData(products) {
+    return Promise.map(products, p => {
+        const parts = _.get(p, 'default_image_urls.main_image_url').split('/')
+        const imagePath = _.join([parts[parts.length - 2], parts[parts.length - 1]], '/')
+        return mecImgixApi.getColors(imagePath)
+        .then(colors => {       
+            p.colors_data = colors
+            return p
+        })
+    }, {concurrency: 5})
+}
 module.exports = {
-    index
+    index,
+    getColorData
 }

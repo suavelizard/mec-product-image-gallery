@@ -1,0 +1,34 @@
+{
+  "list_price": {
+    "amount": 2800,
+    "currency": "CAD"
+  },
+  "all_skus_clearance": true,
+  "clearance_price": {
+    "amount": 2200,
+    "currency": "CAD"
+  },
+  "default_image_urls": {
+    "small_image_url": "https://cdn.mec.ca/medias/sys_master/placeholder/placeholder/8871568179230/5050660-GRY23-placeholder.jpg",
+    "large_image_url": "https://cdn.mec.ca/medias/sys_master/fallback/fallback/8871568310302/5050660-GRY23-fallback.jpg",
+    "main_image_url": "https://cdn.mec.ca/medias/sys_master/fallback/fallback/8871568310302/5050660-GRY23-fallback.jpg",
+    "zoom_image_url": "https://cdn.mec.ca/medias/sys_master/fallback/fallback/8871568310302/5050660-GRY23-fallback.jpg"
+  },
+  "product_code": "5050-660",
+  "full_name": "MEC Provincial Road 233 Bicycle - Unisex",
+  "name": "Provincial Road 233 Bicycle",
+  "brand": "MEC",
+  "review_count": 5,
+  "review_rating": 4.80000019,
+  "can_add_to_cart": true,
+  "can_add_to_wish_list": true,
+  "new_to_mec": false,
+  "default_colour_code": "GRY23",
+  "web_url": "https://www.mec.ca/product/5050-660/Provincial-Road-233-Bicycle",
+  "clearance": true,
+  "tracking": {
+    "erp_category": "982-20-10-999",
+    "category": "cycling/bikes/road bikes/(not set)/"
+  },
+  "product_details_url": "https://www.mec.ca/api/v1/products/5050-660"
+}

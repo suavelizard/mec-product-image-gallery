@@ -1,0 +1,39 @@
+{
+    "colors": [{
+        "red": 0.054902,
+        "hex": "#0e0e0e",
+        "blue": 0.054902,
+        "green": 0.054902
+    }, {
+        "red": 0.705882,
+        "hex": "#b4b4b4",
+        "blue": 0.705882,
+        "green": 0.705882
+    }, {
+        "red": 0.909804,
+        "hex": "#e8e8e6",
+        "blue": 0.901961,
+        "green": 0.909804
+    }],
+    "average_luminance": 0.963253,
+    "dominant_colors": {
+        "muted_light": {
+            "red": 0.752941,
+            "hex": "#c0bfbd",
+            "blue": 0.741176,
+            "green": 0.74902
+        },
+        "muted_dark": {
+            "red": 0.254902,
+            "hex": "#414141",
+            "blue": 0.254902,
+            "green": 0.254902
+        },
+        "muted": {
+            "red": 0.482353,
+            "hex": "#7b7b7b",
+            "blue": 0.482353,
+            "green": 0.482353
+        }
+    }
+}

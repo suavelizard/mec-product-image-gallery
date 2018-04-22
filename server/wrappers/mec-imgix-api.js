@@ -10,12 +10,18 @@ const OPTIONS = {
     },
     json: true
 }
-
+/**
+ * Retrieves color data for MEC images
+ * 
+ * @param {string} imagePath 
+ * @param {string} [palette='json'] 
+ * @param {number} [colorCount=3] 
+ * @returns 
+ */
 function getColors (imagePath, palette='json', colorCount=3) {
     if(!imagePath){
         return Promise.reject('No image path provided')
     }
-    console.info('Getting color data for', imagePath)
     return rp.get(_.extend({
         method: 'GET',
         uri: `${BASE_URL}/${imagePath}`,
