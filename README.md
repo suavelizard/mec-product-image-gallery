@@ -1,16 +1,23 @@
 
 ### Installing/Running ###
-* To start the client side, run the following commands:
+#### Quick start
+```
+cd <project directory>
+npm install
+npm start
+```
+#### To start the client run the following commands:
 
 ```
 cd client
 npm install
+npm run build
 npm run start
 ```
 
-* To start the server side, run the following commands:
+#### To start the server run the following commands:
 ```
 cd server
 npm install
-nodemon index.js
+npm start
 ```

@@ -29,29 +29,40 @@ export default {
     search: _.debounce(function (keywords) {
       this.loading = true
       this.$root.$emit('search-start', keywords)
-    }, 300)
+    }, 175)
   },
   mounted () {
     this.$root.$on('search-done', () => {
       this.loading = false
-      this.$router.push({path: '/', query: {keywords: this.keywords}})
+      this.$router.push({name: 'Home', query: {keywords: this.keywords}})
     })
-    this.search(this.keywords)
+    if (this.$route.query.keywords) {
+      this.keywords = this.$route.query.keywords
+      this.search(this.keywords)
+    }
+  },
+  watch: {
+    '$route' (to, from) {
+      if (to.query.keywords !== this.keywords) {
+        this.keywords = to.query.keywords
+        this.search(this.keywords)
+      }
+    }
   }
 }
 </script>
 
 <style lang="scss">
 .navbar {
-    padding: 0;
+    padding: 0!important;
 }
 .navbar-dark.bg-dark {
     background: #303030;
 }
 .navbar-brand {
-    padding-top: 0;
-    padding-bottom: 0;
-    line-height: 0;
+    padding-top: 0!important;
+    padding-bottom: 0!important;
+    line-height: 0!important;
     svg {
         max-width: 75px;
         fill: #0ca948;

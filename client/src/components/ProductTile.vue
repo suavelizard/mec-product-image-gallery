@@ -1,11 +1,14 @@
 <template>
   <div class="card">
-    <img class="card-img-top" v-bind:src="product.default_image_urls.main_image_url" alt="Card image cap">
+    <img class="card-img-top" v-lazy="product.default_image_urls.main_image_url" v-bind:alt="product.full_name">
     <div class="card-body">
       <h5 class="card-title">{{product.full_name}}</h5>
     </div>
+    <div class="card-body">
+      <small class="text-muted" v-if="product.list_price.amount">${{product.list_price.amount}} {{product.list_price.currency}}</small><br>
+      <star-rating v-bind:rating="product.review_rating" v-bind:star-size="15" v-bind:max-rating="5" read-only="true" v-bind:show-rating="false" v-bind:inline="true"></star-rating>({{product.review_count}})
+    </div>
     <div class="card-footer">
-      <!-- <small class="text-muted">${{product.list_price.amount}} {{product.list_price.currency}}</small> -->
       <ul class="list-inline">
           <li class="list-inline-item" v-for="(color, index) in product.colors_data.colors" v-bind:key="index">
               <Swatch v-bind:color="color.hex" />
@@ -16,10 +19,12 @@
 </template>
 <script>
 import Swatch from '@/components/Swatch'
+import StarRating from 'vue-star-rating'
 export default {
   name: 'ProductTile',
   components: {
-    Swatch
+    Swatch,
+    StarRating
   },
   props: {
     product: {
