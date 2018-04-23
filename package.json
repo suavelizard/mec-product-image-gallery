@@ -4,7 +4,7 @@
  "description": "This application allows a user to search for products via a keyword and returns 5 images and their associated main colors",
  "main": "index.js",
  "scripts": {
-  "preinstall": "npm prune",
+  "heroku-prebuild": "npm prune && npm install --only=development",
   "start": "node ./server/index.js",
   "postinstall": "cd ./client && npm install && npm run build && cd ../server && npm install"
  },
