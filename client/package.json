@@ -12,6 +12,7 @@
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
     "build": "node build/build.js",
+    "heroku-prebuild": "npm install --only=dev",
     "postinstall": "npm run build"
   },
   "dependencies": {
