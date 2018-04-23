@@ -9,8 +9,7 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home,
-      props: route => ({ query: route.query.keywords })
+      component: Home
     }
   ]
 })

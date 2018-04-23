@@ -27,7 +27,7 @@
       </div>
     </div>
     <div class="row" v-if="keywords !== '' && total_products > 0">
-      <div class="col-sm-2 col-md-2 col-lg-3 d-flex" v-for="product in products" v-bind:key="product.code">
+      <div class="col-sm-6 col-md-6 col-lg-3 d-flex" v-for="product in products" v-bind:key="product.code">
         <ProductTile :product="product" />
       </div>
     </div>
@@ -68,6 +68,6 @@ export default {
   margin: 1rem 0;
 }
 .jumbotron {
-  background: #fff;
+  background: #fff!important;
 }
 </style>

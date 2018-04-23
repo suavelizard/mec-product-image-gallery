@@ -7,7 +7,10 @@ const mecApi = require('../../wrappers/mec-v1-api')
 const mecImgixApi = require('../../wrappers/mec-imgix-api')
 
 /**
- * Get products
+ * Get products by keyword
+ * @param {any} req 
+ * @param {any} res
+ * @returns Promise<any>
  */
 function index(req, res) {
     return mecApi.products.search(req.query.keywords)
@@ -23,9 +26,22 @@ function index(req, res) {
 }
 
 /**
+ * Unused. Example of extending the API to more endpoints.
+ * 
+ * @param {any} req 
+ * @param {any} res 
+ * @returns Promise<any>
+ */
+function getByCode(req, res) {
+    return mecApi.products.getByCode(req.params.code)
+    .then(common.respondWithResult(res))
+    .catch(common.handleError(res))
+}
+
+/**
  * returns color data for products based on the main_image_url
  * @param {array} products 
- * @returns 
+ * @returns Promise<any>
  */
 function getColorData(products) {
     return Promise.map(products, p => {
@@ -40,5 +56,6 @@ function getColorData(products) {
 }
 module.exports = {
     index,
-    getColorData
+    getColorData,
+    getByCode
 }

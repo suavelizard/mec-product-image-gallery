@@ -3,7 +3,7 @@ const rp = require('request-promise');
 const _ = require('lodash')
 const Promise = require('bluebird')
 
-const BASE_URL = 'https://mec.imgix.net/medias/sys_master/fallback/fallback'
+const BASE_URL = process.env.IMGIX_URL || 'https://mec.imgix.net/medias/sys_master/fallback/fallback'
 const OPTIONS = {
     headers: {
         'User-Agent': 'Request-Promise'
