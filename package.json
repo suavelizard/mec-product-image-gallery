@@ -4,14 +4,14 @@
  "description": "This application allows a user to search for products via a keyword and returns 5 images and their associated main colors",
  "main": "index.js",
  "scripts": {
-  "heroku-prebuild": "cd client && npm install --only=development",
+  "preinstall": "npm prune",
   "start": "node ./server/index.js",
   "postinstall": "cd ./client && npm install && npm run build && cd ../server && npm install"
  },
  "author": "Zane Ouimet",
  "license": "MIT",
  "engines": {
-  "node": "= 8.11.1",
-  "npm": "= 5.6.0"
+  "node": ">= 6.0.0",
+  "npm": ">= 3.0.0"
  }
 }
